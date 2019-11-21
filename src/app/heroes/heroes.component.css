@@ -1,1 +1,3 @@
 .heroes .selected {background-color: red;}
+
+.heroes li {cursor:pointer;}

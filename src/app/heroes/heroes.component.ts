@@ -11,12 +11,23 @@ import { HEROES } from '../mock.heroes';
 
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
+  auxHeroName: string;
+
 
   heroes = HEROES;
 
   
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.auxHeroName = this.selectedHero.name;
+  }
+
+  changeHeroName(): void {
+    this.selectedHero.name = this.auxHeroName;
+  }
+
+  cancelSelection():void {
+    this.selectedHero = null;
   }
   constructor() {}
 
