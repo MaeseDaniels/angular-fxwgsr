@@ -12,11 +12,8 @@ import { HEROES } from '../mock.heroes';
 export class HeroesComponent implements OnInit {
   selectedHero: Hero;
   auxHeroName: string;
+  heroes: Hero[];
 
-
-  heroes = HEROES;
-
-  
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.auxHeroName = this.selectedHero.name;
@@ -24,12 +21,15 @@ export class HeroesComponent implements OnInit {
 
   changeHeroName(): void {
     this.selectedHero.name = this.auxHeroName;
+    this.cancelSelection();
   }
 
-  cancelSelection():void {
+  cancelSelection(): void {
     this.selectedHero = null;
   }
-  constructor() {}
+  constructor() {
+    this.heroes = HEROES;
+  }
 
   ngOnInit() {
     //this.selectedHero = this.heroes[0];

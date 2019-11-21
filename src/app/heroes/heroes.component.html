@@ -12,9 +12,9 @@
   <div><span>id: </span>{{selectedHero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="auxHeroName" placeholder="name" (keydown.enter)="changeHeroName(); cancelSelection()"/>
+      <input [(ngModel)]="auxHeroName" placeholder="name" (keydown.enter)="changeHeroName()"/>
     </label>
-    <button (click)="changeHeroName(); cancelSelection()">Cambiar Nombre </button>
+    <button (click)="changeHeroName()">Cambiar Nombre </button>
   </div>  
   <button (click)="cancelSelection()">Volver </button>
 </div>

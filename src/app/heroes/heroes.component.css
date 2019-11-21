@@ -1,12 +1,23 @@
 .heroes .selected {background-color: red;}
+
+.heroes{
+  display: flex;
+}
 .heroes li {
   cursor: pointer;
   list-style: none;
   padding: 10px;
   max-width: 100px;
+  background-color: lightblue;
+  margin: 0 10px;
+  transition: .3s ease all;
+  border-radius: 4px;
+  color: white;
 }
-
+.heroes li:hover {
+  
+  background-color: darkcyan;
+}
 .heroes li span{
   display: block;
-  background-color: light-blue;
 }
