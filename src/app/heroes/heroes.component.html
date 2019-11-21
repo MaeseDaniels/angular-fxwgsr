@@ -2,7 +2,7 @@
   <h2>My Heroes</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">  
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <span class="badge">Id: {{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
 </div>
@@ -12,9 +12,9 @@
   <div><span>id: </span>{{selectedHero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="auxHeroName" placeholder="name"/>
+      <input [(ngModel)]="auxHeroName" placeholder="name" (keydown.enter)="changeHeroName(); cancelSelection()"/>
     </label>
-    <button (click)="changeHeroName()">Cambiar Nombre </button>
+    <button (click)="changeHeroName(); cancelSelection()">Cambiar Nombre </button>
   </div>  
   <button (click)="cancelSelection()">Volver </button>
 </div>
